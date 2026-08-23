@@ -47,14 +47,14 @@ async function serveShell(request) {
 }
 
 self.addEventListener('push', (event) => {
-  let data = { title: 'משימות ירין', body: '' }
+  let data = { title: "ירין ת'עניינים", body: '' }
   try {
     data = event.data.json()
   } catch {
     data.body = event.data ? event.data.text() : ''
   }
   event.waitUntil(
-    self.registration.showNotification(data.title || 'משימות ירין', {
+    self.registration.showNotification(data.title || "ירין ת'עניינים", {
       body: data.body || '',
       icon: '/icon-192.png',
       badge: '/icon-192.png',
